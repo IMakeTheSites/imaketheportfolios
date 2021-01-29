@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import { getAllPosts } from '../../lib/api';
-import styles from '../../styles/Home.module.css';
-import blogStyles from '../../styles/Blog.module.css';
+import Head from "next/head";
+import Link from "next/link";
+import { getAllPosts } from "../../lib/api";
+import styles from "../../styles/Home.module.css";
+import blogStyles from "../../styles/Blog.module.css";
 
 const Blog = ({ allPosts: { edges } }) => (
   <div className={styles.container}>
@@ -51,7 +51,6 @@ const Blog = ({ allPosts: { edges } }) => (
   </div>
 );
 
-export default Blog;
 export async function getStaticProps() {
   const allPosts = await getAllPosts();
   return {
@@ -60,3 +59,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+export default Blog;

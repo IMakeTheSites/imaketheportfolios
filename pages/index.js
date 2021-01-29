@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import Link from 'next/link';
-import { FaTwitter } from 'react-icons/fa';
-import { FaFacebookF } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
-import { FaGithub } from 'react-icons/fa';
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
+import { FaTwitter } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -34,7 +34,7 @@ const Home = () => {
           <h2 className="sm-heading">
             Mark Wlodawski:
             <span className="text-secondary">
-              {' '}
+              {" "}
               Web Developer, Programmer, and Entrepreneur
             </span>
           </h2>
