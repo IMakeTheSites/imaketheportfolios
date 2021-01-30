@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import lob from '../img/lob.jpg';
-import dataTape from '../img/dataTapeSite.jpg';
-import mqExports from '../img/mqExportsSite.jpg';
-import worklete from '../img/worklete.png';
+import Head from "next/head";
+import Link from "next/link";
+import lob from "../img/lob.jpg";
+import dataTape from "../img/dataTapeSite.jpg";
+import mqExports from "../img/mqExportsSite.jpg";
+import worklete from "../img/worklete.png";
 
 const Work = () => {
   return (

@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import aboutStyles from '../styles/About.module.css';
-import profile from '../img/profile.jpg';
+import Head from "next/head";
+import aboutStyles from "../styles/About.module.css";
+import profile from "../img/profile.jpg";
 
 const About = () => {
   return (
