@@ -2794,6 +2794,7 @@ async function getPost(slug) {
         date
         featuredImage {
           node {
+            id
             sourceUrl
           }
         }
