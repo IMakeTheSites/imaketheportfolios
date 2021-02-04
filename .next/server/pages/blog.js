@@ -2720,7 +2720,7 @@ function makePublicRouterInstance(router) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getAllPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getAllPostsWithSlug; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getPost; });
-const API_URL = process.env.WP_API_URL;
+const API_URL = "https://imakethesites.com/graphql";
 
 async function fetchAPI(query, {
   variables
