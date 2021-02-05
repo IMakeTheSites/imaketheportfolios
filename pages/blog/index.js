@@ -7,7 +7,7 @@ import blogStyles from "../../styles/Blog.module.css";
 const Blog = ({ allPosts: { edges } }) => (
   <div className={styles.container}>
     <Head>
-      <title>Blog Articles</title>
+      <title>Dev Opinions and Articles</title>
       <link
         rel="icon"
         type="image/png"
@@ -24,7 +24,7 @@ const Blog = ({ allPosts: { edges } }) => (
     </Head>
 
     <main className={styles.main}>
-      <h1 className={styles.title}>Latest Blog Articles</h1>
+      <h1 className={styles.title}>Newest Blog Articles</h1>
       <hr />
       <section>
         {edges.map(({ node }) => (

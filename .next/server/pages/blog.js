@@ -143,7 +143,7 @@ const Blog = ({
   className: _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.container,
   children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("title", {
-      children: "Blog Articles"
+      children: "Dev Opinions and Articles"
     }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("link", {
       rel: "icon",
       type: "image/png",
@@ -162,7 +162,7 @@ const Blog = ({
     className: _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.main,
     children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("h1", {
       className: _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.title,
-      children: "Latest Blog Articles"
+      children: "Newest Blog Articles"
     }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("hr", {}), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("section", {
       children: edges.map(({
         node
