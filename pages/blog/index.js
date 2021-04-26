@@ -1,13 +1,13 @@
-import Head from "next/head";
-import Link from "next/link";
-import { getAllPosts } from "../../lib/api";
-import styles from "../../styles/Home.module.css";
-import blogStyles from "../../styles/Blog.module.css";
+import Head from 'next/head';
+import Link from 'next/link';
+import { getAllPosts } from '../../lib/api';
+import styles from '../../styles/Home.module.css';
+import blogStyles from '../../styles/Blog.module.css';
 
 const Blog = ({ allPosts: { edges } }) => (
   <div className={styles.container}>
     <Head>
-      <title>Dev Opinions and Articles</title>
+      <title>Devevelopment News and Trends</title>
       <link
         rel="icon"
         type="image/png"
@@ -57,6 +57,7 @@ export async function getStaticProps() {
     props: {
       allPosts,
     },
+    revalidate: 1,
   };
 }
 
