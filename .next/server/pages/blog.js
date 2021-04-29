@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -143,7 +143,7 @@ const Blog = ({
   className: _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.container,
   children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("title", {
-      children: "Dev Opinions and Articles"
+      children: "I Make the Blogs"
     }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("link", {
       rel: "icon",
       type: "image/png",
@@ -162,7 +162,7 @@ const Blog = ({
     className: _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.main,
     children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("h1", {
       className: _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_4___default.a.title,
-      children: "Newest Blog Articles"
+      children: "Development News and Trends"
     }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("hr", {}), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("section", {
       children: edges.map(({
         node
@@ -199,7 +199,8 @@ async function getStaticProps() {
   return {
     props: {
       allPosts
-    }
+    },
+    revalidate: 1
   };
 }
 /* harmony default export */ __webpack_exports__["default"] = (Blog);
@@ -326,6 +327,14 @@ module.exports = _interopRequireWildcard;
 
 /***/ }),
 
+/***/ 3:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("/yi9");
+
+
+/***/ }),
+
 /***/ "3WeD":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -410,14 +419,6 @@ function normalizeLocalePath(pathname, locales) {
     detectedLocale
   };
 }
-
-/***/ }),
-
-/***/ 4:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("/yi9");
-
 
 /***/ }),
 
@@ -2720,16 +2721,16 @@ function makePublicRouterInstance(router) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getAllPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getAllPostsWithSlug; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getPost; });
-const API_URL = "https://imaketheblogs.com/graphql";
+const API_URL = 'http://www.imaketheblogs.com/graphql';
 
 async function fetchAPI(query, {
   variables
 } = {}) {
   const headers = {
-    "Content-Type": "application/json"
+    'Content-Type': 'application/json'
   };
   const res = await fetch(API_URL, {
-    method: "POST",
+    method: 'POST',
     headers,
     body: JSON.stringify({
       query,
@@ -2740,8 +2741,8 @@ async function fetchAPI(query, {
 
   if (json.errors) {
     console.log(json.errors);
-    console.log("error details", query, variables);
-    throw new Error("Failed to fetch API");
+    console.log('error details', query, variables);
+    throw new Error('Failed to fetch API');
   }
 
   return json.data;
@@ -2749,7 +2750,7 @@ async function fetchAPI(query, {
 
 async function getAllPosts(preview) {
   const data = await fetchAPI(`
-    query MyQuery {
+    query AllPosts {
       posts(first: 20, where: {orderby: {field: DATE, order: DESC}}) {
         edges {
           node {
@@ -2808,7 +2809,7 @@ async function getPost(slug) {
     `, {
     variables: {
       id: slug,
-      idType: "SLUG"
+      idType: 'SLUG'
     }
   });
   return data;

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -169,6 +169,14 @@ exports.default = _default;
 
 /***/ }),
 
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("KTQB");
+
+
+/***/ }),
+
 /***/ "284h":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -227,14 +235,6 @@ function _interopRequireWildcard(obj) {
 }
 
 module.exports = _interopRequireWildcard;
-
-/***/ }),
-
-/***/ 3:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("KTQB");
-
 
 /***/ }),
 
@@ -2755,16 +2755,16 @@ function makePublicRouterInstance(router) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getAllPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getAllPostsWithSlug; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getPost; });
-const API_URL = "https://imaketheblogs.com/graphql";
+const API_URL = 'http://www.imaketheblogs.com/graphql';
 
 async function fetchAPI(query, {
   variables
 } = {}) {
   const headers = {
-    "Content-Type": "application/json"
+    'Content-Type': 'application/json'
   };
   const res = await fetch(API_URL, {
-    method: "POST",
+    method: 'POST',
     headers,
     body: JSON.stringify({
       query,
@@ -2775,8 +2775,8 @@ async function fetchAPI(query, {
 
   if (json.errors) {
     console.log(json.errors);
-    console.log("error details", query, variables);
-    throw new Error("Failed to fetch API");
+    console.log('error details', query, variables);
+    throw new Error('Failed to fetch API');
   }
 
   return json.data;
@@ -2784,7 +2784,7 @@ async function fetchAPI(query, {
 
 async function getAllPosts(preview) {
   const data = await fetchAPI(`
-    query MyQuery {
+    query AllPosts {
       posts(first: 20, where: {orderby: {field: DATE, order: DESC}}) {
         edges {
           node {
@@ -2843,7 +2843,7 @@ async function getPost(slug) {
     `, {
     variables: {
       id: slug,
-      idType: "SLUG"
+      idType: 'SLUG'
     }
   });
   return data;

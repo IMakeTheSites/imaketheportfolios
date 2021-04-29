@@ -1,7 +1,6 @@
 {
   "/_app": "pages/_app.js",
   "/about": "pages/about.html",
-  "/api/hello": "pages/api/hello.js",
   "/blog/[slug]": "pages/blog/[slug].js",
   "/blog": "pages/blog.js",
   "/contact": "pages/contact.html",
