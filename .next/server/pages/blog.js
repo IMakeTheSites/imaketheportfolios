@@ -200,7 +200,7 @@ async function getStaticProps() {
     props: {
       allPosts
     },
-    revalidate: 1
+    revalidate: 60
   };
 }
 /* harmony default export */ __webpack_exports__["default"] = (Blog);
